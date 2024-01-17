@@ -33,4 +33,17 @@ var products = [
 
 const list = document.getElementById("product-list");
 
-document.body.innerHTML = products.length
+products.forEach((product, i) => {
+    list.innerHTML += `<li class="bg-white p-4 rounded-2xl">
+    <div>
+        <div class="aspect-4/3">
+            <img src="images/shoe-${i + 1}.png" alt="Product" class="w-full h-full object-contain object-bottom">
+        </div>
+        <div class="mt-4">
+            <h4 class="font-bold text-lg">${product.name}</h4>
+            <p class="text-sm text-stone-400 my-2">${product.description}</p>
+            <span class="font-semibold text-base">${product.price}</span>
+        </div>
+    </div>
+</li>`;
+});
